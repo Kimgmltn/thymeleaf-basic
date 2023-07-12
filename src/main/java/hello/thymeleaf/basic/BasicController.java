@@ -104,12 +104,22 @@ public class BasicController {
 
     @GetMapping("/each")
     public String each(Model model) {
+        addUser(model);
+        return "basic/each";
+    }
+
+    private static void addUser(Model model) {
         ArrayList<User> list = new ArrayList<>();
         list.add(new User("UserA", 10));
         list.add(new User("UserB", 20));
         list.add(new User("UserC", 30));
 
         model.addAttribute("users", list);
-        return "basic/each";
+    }
+
+    @GetMapping("/condition")
+    public String condition(Model model) {
+        addUser(model);
+        return "basic/condition";
     }
 }
