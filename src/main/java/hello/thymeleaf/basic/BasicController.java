@@ -134,4 +134,11 @@ public class BasicController {
         addUser(model);
         return "basic/block";
     }
+
+    @GetMapping("/javascript")
+    public String javascript(Model model) {
+        model.addAttribute("user", new User("userA", 10));
+        addUser(model);
+        return "basic/javascript";
+    }
 }
